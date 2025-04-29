@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { FaEnvelope, FaUser, FaCommentDots } from 'react-icons/fa'
 
 export default function ContactForm() {
   const t = useTranslations('contact')
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const locale = useLocale()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -15,6 +16,7 @@ export default function ContactForm() {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       message: formData.get('message') as string,
+      locale: formData.get('locale') as string,
     }
     setStatus('idle')
     try {
@@ -38,6 +40,7 @@ export default function ContactForm() {
     <div className="max-w-lg mx-auto bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-lg p-8">
       <h2 className="text-2xl font-bold text-center mb-6 text-blue-600 dark:text-blue-400">{t('formTitle')}</h2>
       <form onSubmit={handleSubmit} className="space-y-5">
+        <input type="hidden" name="locale" value={locale} />
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">
             <FaUser className="inline mr-2" /> {t('name')}

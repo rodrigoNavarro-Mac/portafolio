@@ -53,5 +53,11 @@
     "send": "Enviar",
     "success": "¡Mensaje enviado con éxito!",
     "error": "Ocurrió un error. Intenta de nuevo."
+  },
+  "hero": {
+    "title": "Rodrigo Navarro",
+    "subtitle": "Ingeniero Sistemas Computacionales",
+    "projects": "Ver Proyectos",
+    "contact": "Contactar"
   }
 } 

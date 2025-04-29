@@ -53,5 +53,11 @@
     "send": "Send",
     "success": "Message sent successfully!",
     "error": "An error occurred. Please try again."
+  },
+  "hero": {
+    "title": "Rodrigo Navarro",
+    "subtitle": "Computer Systems Engineer",
+    "projects": "View Projects",
+    "contact": "Contact"
   }
 } 

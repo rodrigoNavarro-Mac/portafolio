@@ -24,7 +24,6 @@ export default function Navbar() {
     { label: t('home'), href: '#inicio' },
     { label: t('about'), href: '#about' },
     { label: t('services'), href: '#services' },
-    { label: t('contact'), href: '#contact' }
   ]
 
   return (
@@ -66,15 +65,13 @@ export default function Navbar() {
             <LanguageSelector />
           </div>
 
-          {/* Botón de contacto en escritorio */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+          {/* Botón de contacto en escritorio como enlace */}
+          <Link
+            href="#contact"
             className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
           >
             {t('contact')}
-          </motion.button>
+          </Link>
 
           {/* Menú hamburguesa en móvil */}
           <button
@@ -109,12 +106,13 @@ export default function Navbar() {
                 </Link>
               ))}
               <LanguageSelector />
-              <button
+              <Link
+                href="#contact"
                 className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {t('contact')}
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

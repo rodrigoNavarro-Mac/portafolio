@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json()
+    const { name, email, message, locale } = await request.json()
 
     // Configurar el transporter de nodemailer
     const transporter = nodemailer.createTransport({
@@ -14,18 +14,35 @@ export async function POST(request: Request) {
       },
     })
 
+    // Mensaje de confirmación según idioma
+    const confirmationSubject =
+      locale === 'en'
+        ? 'Contact Confirmation - Rodrigo Navarro'
+        : 'Confirmación de contacto - Rodrigo Navarro'
+
+    const confirmationHtml =
+      locale === 'en'
+        ? `
+          <h1>Thank you for contacting me!</h1>
+          <p>Hello ${name},</p>
+          <p>I have received your message and will get back to you as soon as possible.</p>
+          <p>Best regards,</p>
+          <p>Rodrigo Navarro</p>
+        `
+        : `
+          <h1>¡Gracias por contactarme!</h1>
+          <p>Hola ${name},</p>
+          <p>He recibido tu mensaje y me pondré en contacto contigo lo antes posible.</p>
+          <p>Saludos,</p>
+          <p>Rodrigo Navarro</p>
+        `
+
     // Email para el cliente
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Confirmación de contacto - Rodrigo Navarro',
-      html: `
-        <h1>¡Gracias por contactarme!</h1>
-        <p>Hola ${name},</p>
-        <p>He recibido tu mensaje y me pondré en contacto contigo lo antes posible.</p>
-        <p>Saludos,</p>
-        <p>Rodrigo Navarro</p>
-      `,
+      subject: confirmationSubject,
+      html: confirmationHtml,
     })
 
     // Email para mí

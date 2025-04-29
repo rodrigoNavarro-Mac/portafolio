@@ -1,30 +1,30 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
-import { Inter } from 'next/font/google'
-import '../globals.css'
+import { ReactNode } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+export interface LayoutProps {
+  children: ReactNode
+  params: Promise<{ locale: string }>
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'es' }]
 }
 
-export default async function LocaleLayout(props: {
-  children: React.ReactNode
-  params: { locale: string }
-}) {
-  const { locale } = await Promise.resolve(props.params)
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const resolvedParams = await params
+  const locale = resolvedParams.locale
 
   let messages
   try {
     messages = (await import(`@/messages/${locale}.json`)).default
-  } catch (error) {
+  } catch {
     notFound()
   }
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {props.children}
+      {children}
     </NextIntlClientProvider>
   )
 } 

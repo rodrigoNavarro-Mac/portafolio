@@ -11,7 +11,7 @@ import Services from './Services'
 const projects = [
   {
     title: 'Ebenezer',
-    description: 'Pagina web con ssistema de gestion de citas y  servicios por sucursal.',
+    description: 'Pagina web con sistema de gestion de citas y  servicios por sucursal.',
     imageUrl: '/projects/ebenezer.jpg',
     githubUrl: 'https://github.com/rodrigoNavarro-Mac/Ebenezer',
     technologies: ['Django', 'React', 'PostgreSQL'],

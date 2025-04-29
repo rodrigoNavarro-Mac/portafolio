@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+  const t = useTranslations('hero')
+
   return (
     <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -44,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
           >
-            Rodrigo Navarro
+            {t('title')}
           </motion.h1>
 
           <motion.p
@@ -53,7 +56,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
           >
-            Ingeniero Sistemas Computacionales
+            {t('subtitle')}
           </motion.p>
 
           <motion.div
@@ -66,13 +69,13 @@ export default function Hero() {
               href="#projects"
               className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition transform hover:scale-105"
             >
-              Ver Proyectos
+              {t('projects')}
             </a>
             <a
               href="#contact"
               className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition transform hover:scale-105"
             >
-              Contactar
+              {t('contact')}
             </a>
           </motion.div>
         </div>
