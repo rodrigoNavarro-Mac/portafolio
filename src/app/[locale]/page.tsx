@@ -15,7 +15,7 @@ export default async function Page({ params }: PageProps) {
     }
 
     return <HomePage />
-  } catch (error) {
+  } catch {
     redirect('/en')
   }
 } 
