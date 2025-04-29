@@ -11,6 +11,8 @@ interface ProjectCardProps {
   githubUrl: string
   demoUrl?: string
   technologies: string[]
+  longDescription?: string
+  features?: string[]
 }
 
 export default function ProjectCard({
@@ -20,18 +22,21 @@ export default function ProjectCard({
   githubUrl,
   demoUrl,
   technologies,
+  longDescription,
+  features,
 }: ProjectCardProps) {
   const t = useTranslations('projects')
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+    <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative">
       <div className="relative h-48">
         <Image
           src={imageUrl}
           alt={title}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300" />
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
@@ -64,6 +69,25 @@ export default function ProjectCard({
             >
               {t('viewDemo')}
             </Link>
+          )}
+        </div>
+      </div>
+      
+      {/* Overlay con información adicional */}
+      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100">
+        <div className="text-white">
+          {longDescription && (
+            <p className="text-sm mb-4">{longDescription}</p>
+          )}
+          {features && features.length > 0 && (
+            <ul className="text-sm space-y-2">
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-center">
+                  <span className="mr-2">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>

@@ -8,39 +8,67 @@ import ProjectCard from './ProjectCard'
 import ContactForm from './ContactForm'
 import Services from './Services'
 
-const projects = [
-  {
-    title: 'Ebenezer',
-    description: 'Pagina web con sistema de gestion de citas y  servicios por sucursal.',
-    imageUrl: '/projects/ebenezer.jpg',
-    githubUrl: 'https://github.com/rodrigoNavarro-Mac/Ebenezer',
-    technologies: ['Django', 'React', 'PostgreSQL'],
-  },
-  {
-    title: 'SIT_DR',
-    description: 'Sistema integral de tutorias.',
-    imageUrl: '/projects/sit-dr.jpg',
-    githubUrl: 'https://github.com/rodrigoNavarro-Mac/SIT_DR',
-    technologies: ['Django', 'React', 'PostgreSQL'],
-  },
-  {
-    title: 'DanJVicGarageDoors',
-    description: 'Sitio web para empresa de puertas de garaje.',
-    imageUrl: '/projects/danjvic.jpg',
-    githubUrl: 'https://github.com/DJVICGARAGE/DanJVicGarageDoors',
-    technologies: ['Django', 'React', 'PostgreSQL'],
-  },
-  {
-    title: 'SRG_vortex',
-    description: 'Sistema de gestión de recursos.',
-    imageUrl: '/projects/srg.jpg',
-    githubUrl: 'https://github.com/rodrigoNavarro-Mac/SRG_vortex',
-    technologies: ['Django', 'PostgreSQL'],
-  },
-]
-
 export default function HomePage() {
   const t = useTranslations()
+
+  const projects = [
+    {
+      title: 'Ebenezer',
+      description: t('projects.ebenezer.description'),
+      longDescription: t('projects.ebenezer.longDescription'),
+      imageUrl: '/projects/ebenezer.jpg',
+      githubUrl: 'https://github.com/rodrigoNavarro-Mac/Ebenezer',
+      technologies: ['Django', 'React', 'PostgreSQL'],
+      features: [
+        t('projects.ebenezer.features.1'),
+        t('projects.ebenezer.features.2'),
+        t('projects.ebenezer.features.3'),
+        t('projects.ebenezer.features.4')
+      ]
+    },
+    {
+      title: 'SIT_DR',
+      description: t('projects.sitdr.description'),
+      longDescription: t('projects.sitdr.longDescription'),
+      imageUrl: '/projects/sit-dr.jpg',
+      githubUrl: 'https://github.com/rodrigoNavarro-Mac/SIT_DR',
+      technologies: ['Django', 'React', 'PostgreSQL'],
+      features: [
+        t('projects.sitdr.features.1'),
+        t('projects.sitdr.features.2'),
+        t('projects.sitdr.features.3'),
+        t('projects.sitdr.features.4')
+      ]
+    },
+    {
+      title: 'DanJVicGarageDoors',
+      description: t('projects.danjvic.description'),
+      longDescription: t('projects.danjvic.longDescription'),
+      imageUrl: '/projects/danjvic.jpg',
+      githubUrl: 'https://github.com/DJVICGARAGE/DanJVicGarageDoors',
+      technologies: ['Django', 'React', 'PostgreSQL'],
+      features: [
+        t('projects.danjvic.features.1'),
+        t('projects.danjvic.features.2'),
+        t('projects.danjvic.features.3'),
+        t('projects.danjvic.features.4')
+      ]
+    },
+    {
+      title: 'SRG_vortex',
+      description: t('projects.srg.description'),
+      longDescription: t('projects.srg.longDescription'),
+      imageUrl: '/projects/srg.jpg',
+      githubUrl: 'https://github.com/rodrigoNavarro-Mac/SRG_vortex',
+      technologies: ['Django', 'PostgreSQL'],
+      features: [
+        t('projects.srg.features.1'),
+        t('projects.srg.features.2'),
+        t('projects.srg.features.3'),
+        t('projects.srg.features.4')
+      ]
+    },
+  ]
 
   return (
     <div className="min-h-screen">

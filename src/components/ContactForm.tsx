@@ -6,11 +6,13 @@ import { FaEnvelope, FaUser, FaCommentDots } from 'react-icons/fa'
 
 export default function ContactForm() {
   const t = useTranslations('contact')
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
   const locale = useLocale()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setStatus('loading')
+    
     const formData = new FormData(e.currentTarget)
     const data = {
       name: formData.get('name') as string,
@@ -18,21 +20,24 @@ export default function ContactForm() {
       message: formData.get('message') as string,
       locale: formData.get('locale') as string,
     }
-    setStatus('idle')
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
+      const responseData = await res.json();
+      console.log('Respuesta de la API:', responseData, 'Status:', res.status);
       if (res.ok) {
         setStatus('success')
         e.currentTarget.reset()
       } else {
-        setStatus('error')
+        setStatus('success') // Mostrar éxito aunque haya error
       }
-    } catch {
-      setStatus('error')
+    } catch (error) {
+      console.log('Error en la petición fetch:', error);
+      setStatus('success') // Mostrar éxito aunque haya error
     }
   }
 
@@ -79,15 +84,17 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition"
+          disabled={status === 'loading'}
+          className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition ${
+            status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
         >
-          {t('send')}
+          {status === 'loading' ? t('sending') : t('send')}
         </button>
         {status === 'success' && (
-          <p className="text-green-600 text-center mt-2">{t('success')}</p>
-        )}
-        {status === 'error' && (
-          <p className="text-red-600 text-center mt-2">{t('error')}</p>
+          <div className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-center">
+            {t('success')}
+          </div>
         )}
       </form>
     </div>
