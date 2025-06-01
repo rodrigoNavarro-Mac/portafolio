@@ -40,18 +40,18 @@
     "viewGithub": "View on GitHub",
     "viewDemo": "View Demo",
     "ebenezer": {
-      "description": "Website with appointment and service management system by branch.",
-      "longDescription": "Complete management system for beauty salons, allowing the administration of appointments, services and staff by branch.",
+      "description": "Comprehensive management system for clinical laboratories with appointment and branch administration.",
+      "longDescription": "Complete management system for clinical laboratories that allows modifying images and text throughout the page, scheduling medical appointments, managing patient appointments, uploading laboratory services, and registering branches. Includes a complete administrative panel for comprehensive laboratory management.",
       "features": {
-        "1": "Appointment and service management by branch",
-        "2": "Administration panel for managers",
-        "3": "Email notification system",
-        "4": "Business reports and statistics"
+        "1": "Medical appointment and service management by branch",
+        "2": "Content editor for modifying images and text",
+        "3": "Schedule and availability management system",
+        "4": "Laboratory services and branch administration"
       }
     },
     "sitdr": {
       "description": "Comprehensive tutoring system.",
-      "longDescription": "Designed and implemented a university tutoring platform to monitor and manage students' academic progress. Includes tools for tracking tutors and students, detailed academic reports, personalized tutoring plans, and advanced analytics. The system improved tutor efficiency by 30% and student engagement by 25%, enabling data-driven academic interventions and personalized reporting.",
+      "longDescription": "University tutoring platform to monitor and manage students' academic progress. Includes tools for tracking tutors and students, detailed academic reports, personalized tutoring plans, and advanced analytics. The system improved tutor efficiency by 30% and student engagement by 25%, enabling data-driven academic interventions and personalized reporting.",
       "features": {
         "1": "Detailed tracking of tutors and students",
         "2": "Generation of reports and personalized plans",
@@ -61,17 +61,17 @@
     },
     "danjvic": {
       "description": "Website for garage door company.",
-      "longDescription": "Web platform for a company specialized in the sale and installation of garage doors.",
+      "longDescription": "Web platform for a company specialized in the sale and installation of garage doors. Allows managing site content, offered services, and maintaining detailed customer control with their respective warranties.",
       "features": {
-        "1": "Product and service catalog",
-        "2": "Online quotation system",
-        "3": "Customer and appointment management",
-        "4": "Administrative panel for the company"
+        "1": "Content editor for modifying images and text",
+        "2": "Contact system for customer inquiries",
+        "3": "Management and registration of offered services",
+        "4": "Customer control and warranty tracking"
       }
     },
     "srg": {
       "description": "Resource management system.",
-      "longDescription": "Developed a comprehensive system to automate the management of memberships, check-ins, classes, sales, and cash register control in a gym. The system reduces administrative workload, improves user experience, and optimizes daily operations. Benefits: automation of records, flexibility for memberships and classes, detailed financial control, operational efficiency, and real-time reporting. Achieved a 50% reduction in administrative tasks and enhanced member experience with features like automated check-ins and real-time class scheduling.",
+      "longDescription": "Comprehensive system to automate the management of memberships, check-ins, classes, sales, and cash register control in a gym. The system reduces administrative workload, improves user experience, and optimizes daily operations. Benefits: automation of records, flexibility for memberships and classes, detailed financial control, operational efficiency, and real-time reporting. Achieves a 50% reduction in administrative tasks and enhanced member experience with features like automated check-ins and real-time class scheduling.",
       "features": {
         "1": "Automated management of memberships and check-ins",
         "2": "Admin dashboard and reporting tools",

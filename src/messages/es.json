@@ -40,18 +40,18 @@
     "viewGithub": "Ver en GitHub",
     "viewDemo": "Ver Demo",
     "ebenezer": {
-      "description": "Página web con sistema de gestión de citas y servicios por sucursal.",
-      "longDescription": "Sistema completo de gestión para salones de belleza, permitiendo la administración de citas, servicios y personal por sucursal.",
+      "description": "Sistema de gestión integral para laboratorios clínicos con administración de citas y sucursales.",
+      "longDescription": "Sistema completo de gestión para laboratorios clínicos que permite modificar imágenes y texto de toda la página, asignar horarios para citas médicas, gestionar citas de pacientes, subir servicios de laboratorio y dar de alta sucursales. Incluye panel administrativo completo para la gestión integral del laboratorio.",
       "features": {
-        "1": "Gestión de citas y servicios por sucursal",
-        "2": "Panel de administración para gerentes",
-        "3": "Sistema de notificaciones por correo",
-        "4": "Reportes y estadísticas de negocio"
+        "1": "Gestión de citas médicas y servicios por sucursal",
+        "2": "Editor de contenido para modificar imágenes y texto",
+        "3": "Sistema de gestión de horarios y disponibilidad",
+        "4": "Administración de servicios de laboratorio y sucursales"
       }
     },
     "sitdr": {
       "description": "Sistema integral de tutorías.",
-      "longDescription": "Diseñé e implementé una plataforma universitaria para monitorear y gestionar el progreso académico de los estudiantes. Incluye herramientas para el seguimiento de tutores y alumnos, reportes académicos detallados, generación de planes personalizados y analíticas avanzadas. El sistema mejoró la eficiencia de los tutores en un 30% y el compromiso estudiantil en un 25%, facilitando intervenciones académicas basadas en datos y reportes personalizados.",
+      "longDescription": "Plataforma universitaria para monitorear y gestionar el progreso académico de los estudiantes. Incluye herramientas para el seguimiento de tutores y alumnos, reportes académicos detallados, generación de planes personalizados y analíticas avanzadas. El sistema mejoró la eficiencia de los tutores en un 30% y el compromiso estudiantil en un 25%, facilitando intervenciones académicas basadas en datos y reportes personalizados.",
       "features": {
         "1": "Seguimiento detallado de tutores y estudiantes",
         "2": "Generación de reportes y planes personalizados",
@@ -61,17 +61,17 @@
     },
     "danjvic": {
       "description": "Sitio web para empresa de puertas de garaje.",
-      "longDescription": "Plataforma web para una empresa especializada en la venta e instalación de puertas de garaje.",
+      "longDescription": "Plataforma web para una empresa especializada en la venta e instalación de puertas de garaje. Permite gestionar el contenido del sitio, servicios ofrecidos y mantener un control detallado de clientes con sus respectivas garantías.",
       "features": {
-        "1": "Catálogo de productos y servicios",
-        "2": "Sistema de cotizaciones en línea",
-        "3": "Gestión de clientes y citas",
-        "4": "Panel administrativo para la empresa"
+        "1": "Editor de contenido para modificar imágenes y texto",
+        "2": "Sistema de contacto para consultas de clientes",
+        "3": "Gestión y alta de servicios ofrecidos",
+        "4": "Control de clientes y seguimiento de garantías"
       }
     },
     "srg": {
       "description": "Sistema de gestión de recursos.",
-      "longDescription": "Desarrollé un sistema integral para automatizar la gestión de membresías, asistencias, clases, ventas y control de caja en un gimnasio. El sistema reduce tareas administrativas, mejora la experiencia del usuario y optimiza la operación diaria. Beneficios: automatización de registros, flexibilidad para membresías y clases, control financiero detallado, eficiencia operativa y reportes en tiempo real. Logré una reducción del 50% en la carga administrativa y una experiencia mejorada para los miembros con funciones como check-in automático y programación de clases.",
+      "longDescription": "Sistema integral para automatizar la gestión de membresías, asistencias, clases, ventas y control de caja en un gimnasio. El sistema reduce tareas administrativas, mejora la experiencia del usuario y optimiza la operación diaria. Beneficios: automatización de registros, flexibilidad para membresías y clases, control financiero detallado, eficiencia operativa y reportes en tiempo real. Logra una reducción del 50% en la carga administrativa y una experiencia mejorada para los miembros con funciones como check-in automático y programación de clases.",
       "features": {
         "1": "Gestión automatizada de membresías y asistencias",
         "2": "Panel de control para administración y reportes",
