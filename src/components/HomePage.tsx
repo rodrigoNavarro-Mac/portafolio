@@ -73,7 +73,7 @@ export default function HomePage() {
       description: t('projects.webScraping.description'),
       longDescription: t('projects.webScraping.longDescription'),
       imageUrl: '/projects/web-scraping.svg',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/rodrigoNavarro-Mac',
       technologies: ['Python', 'BeautifulSoup', 'Selenium', 'Scrapy'],
       features: [
         t('projects.webScraping.features.1'),
@@ -113,32 +113,65 @@ export default function HomePage() {
     },
   ]
 
+  // Skills data with colors for modern design
+  const skills = [
+    { name: 'React', color: 'from-cyan-400 to-blue-500' },
+    { name: 'Node.js', color: 'from-green-400 to-emerald-600' },
+    { name: 'MongoDB', color: 'from-green-500 to-green-700' },
+    { name: 'PostgreSQL', color: 'from-blue-500 to-indigo-600' },
+    { name: 'TypeScript', color: 'from-blue-600 to-blue-800' },
+    { name: 'Tailwind CSS', color: 'from-teal-400 to-cyan-600' }
+  ]
+
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
       <Services />
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <motion.h2
+      {/* Projects Section - Enhanced Design */}
+      <section id="projects" className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-center mb-12"
+            className="text-center mb-16"
           >
-            {t('projects.title')}
-          </motion.h2>
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+                {t('projects.title')}
+              </h2>
+              <div className="h-1.5 w-32 mx-auto bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"></div>
+            </motion.div>
+          </motion.div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 100
+                }}
                 viewport={{ once: true }}
+                whileHover={{ y: -5 }}
               >
                 <ProjectCard {...project} />
               </motion.div>
@@ -147,46 +180,124 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
+      {/* About Section - Enhanced Design */}
+      <section id="about" className="relative py-24 overflow-hidden bg-white dark:bg-gray-900">
+        {/* Animated background pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl font-bold mb-8">{t('about.title')}</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              {t('about.description')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {['React', 'Node.js', 'MongoDB', 'PostgreSQL', 'TypeScript', 'Tailwind CSS'].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium"
+            {/* Title with gradient */}
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+                {t('about.title')}
+              </h2>
+              <div className="h-1.5 w-24 mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full"></div>
+            </motion.div>
+            
+            {/* Description with better styling */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
+                {t('about.description')}
+              </p>
+            </motion.div>
+            
+            {/* Skills with modern cards */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              {skills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: [0, -5, 5, -5, 0],
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group relative"
                 >
-                  {skill}
-                </span>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                  <div className="relative bg-white dark:bg-gray-800 px-6 py-3 rounded-2xl border-2 border-transparent group-hover:border-white dark:group-hover:border-gray-700 transition-all duration-300 shadow-lg">
+                    <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-r ${skill.color} text-lg`}>
+                      {skill.name}
+                    </span>
+                  </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
+      {/* Contact Section - Enhanced Design */}
+      <section id="contact" className="relative py-24 overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-center mb-12">{t('contact.title')}</h2>
-            <ContactForm />
+            {/* Title with gradient */}
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+                {t('contact.title')}
+              </h2>
+              <div className="h-1.5 w-24 mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full"></div>
+            </motion.div>
+            
+            {/* Contact form with card effect */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700"
+            >
+              <ContactForm />
+            </motion.div>
           </motion.div>
         </div>
       </section>
