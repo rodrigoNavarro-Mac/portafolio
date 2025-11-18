@@ -78,6 +78,36 @@
         "3": "Real-time notifications and scheduling",
         "4": "Reduced administrative workload and errors"
       }
+    },
+    "webScraping": {
+      "description": "Automated web scraping scripts for data extraction.",
+      "longDescription": "Collection of web scraping scripts developed in Python using libraries like BeautifulSoup, Selenium, and Scrapy. These scripts allow automated extraction of information from websites, processing structured data, and storing it in different formats. They include error handling, respect for wait times between requests, and support for dynamic JavaScript websites.",
+      "features": {
+        "1": "Automated data extraction from websites",
+        "2": "Support for static and dynamic websites",
+        "3": "Processing and storage of structured data",
+        "4": "Error handling and respect for robots.txt policies"
+      }
+    },
+    "aiReportGenerator": {
+      "description": "Intelligent report generator with artificial intelligence.",
+      "longDescription": "Automatic report generation system using artificial intelligence to analyze data, identify patterns, and create professional documents. The system processes information from multiple sources, generates automatic insights, and produces personalized reports with visualizations and detailed analysis. Uses language models to summarize information and create coherent narratives based on analyzed data.",
+      "features": {
+        "1": "Automatic report generation with AI",
+        "2": "Data analysis and pattern detection",
+        "3": "Custom visualizations and charts",
+        "4": "Automatically generated summaries and narratives"
+      }
+    },
+    "grupoSedico": {
+      "description": "Corporate website for Grupo Sedico México - PET plastic container manufacturer.",
+      "longDescription": "Modern and responsive website developed for Grupo Sedico México, a leading manufacturer of PET plastic containers. The platform features product catalog, custom manufacturing services, corporate information, and contact system. Includes conversion-optimized design, featured products sections, information about manufacturing processes, and integrated contact forms. The site reflects the company's brand identity and facilitates communication with potential customers.",
+      "features": {
+        "1": "Product catalog with detailed information",
+        "2": "Responsive design optimized for mobile",
+        "3": "Contact system and integrated forms",
+        "4": "Presentation of services and manufacturing processes"
+      }
     }
   },
   "about": {

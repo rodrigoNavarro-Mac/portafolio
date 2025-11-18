@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad1)"/>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Web Scraping</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Data Extraction Scripts</text>
+  <circle cx="200" cy="150" r="30" fill="white" opacity="0.3"/>
+  <circle cx="600" cy="150" r="30" fill="white" opacity="0.3"/>
+  <circle cx="200" cy="450" r="30" fill="white" opacity="0.3"/>
+  <circle cx="600" cy="450" r="30" fill="white" opacity="0.3"/>
+  <path d="M 200 150 L 400 300 L 600 150" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+  <path d="M 200 450 L 400 300 L 600 450" stroke="white" stroke-width="3" fill="none" opacity="0.5"/>
+</svg>

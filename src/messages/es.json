@@ -78,6 +78,36 @@
         "3": "Notificaciones y programación en tiempo real",
         "4": "Reducción de tareas administrativas y errores"
       }
+    },
+    "webScraping": {
+      "description": "Scripts automatizados de web scraping para extracción de datos.",
+      "longDescription": "Colección de scripts de web scraping desarrollados en Python utilizando librerías como BeautifulSoup, Selenium y Scrapy. Estos scripts permiten extraer información de sitios web de manera automatizada, procesar datos estructurados y almacenarlos en diferentes formatos. Incluyen manejo de errores, respeto a los tiempos de espera entre solicitudes y soporte para sitios web dinámicos con JavaScript.",
+      "features": {
+        "1": "Extracción automatizada de datos de sitios web",
+        "2": "Soporte para sitios web estáticos y dinámicos",
+        "3": "Procesamiento y almacenamiento de datos estructurados",
+        "4": "Manejo de errores y respeto a políticas de robots.txt"
+      }
+    },
+    "aiReportGenerator": {
+      "description": "Generador de reportes inteligente con inteligencia artificial.",
+      "longDescription": "Sistema de generación automática de reportes utilizando inteligencia artificial para analizar datos, identificar patrones y crear documentos profesionales. El sistema procesa información de múltiples fuentes, genera insights automáticos y produce reportes personalizados con visualizaciones y análisis detallados. Utiliza modelos de lenguaje para resumir información y crear narrativas coherentes basadas en los datos analizados.",
+      "features": {
+        "1": "Generación automática de reportes con IA",
+        "2": "Análisis de datos y detección de patrones",
+        "3": "Visualizaciones y gráficos personalizados",
+        "4": "Resúmenes y narrativas generadas automáticamente"
+      }
+    },
+    "grupoSedico": {
+      "description": "Sitio web corporativo para Grupo Sedico México - Fabricante de envases plásticos PET.",
+      "longDescription": "Sitio web moderno y responsivo desarrollado para Grupo Sedico México, empresa líder en la fabricación de envases plásticos PET. La plataforma presenta el catálogo de productos, servicios de fabricación personalizada, información corporativa y sistema de contacto. Incluye diseño optimizado para conversión, secciones de productos destacados, información sobre procesos de fabricación y formularios de contacto integrados. El sitio refleja la identidad de marca de la empresa y facilita la comunicación con clientes potenciales.",
+      "features": {
+        "1": "Catálogo de productos con información detallada",
+        "2": "Diseño responsivo y optimizado para móviles",
+        "3": "Sistema de contacto y formularios integrados",
+        "4": "Presentación de servicios y procesos de fabricación"
+      }
     }
   },
   "about": {

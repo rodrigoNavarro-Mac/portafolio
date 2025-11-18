@@ -68,6 +68,49 @@ export default function HomePage() {
         t('projects.srg.features.4')
       ]
     },
+    {
+      title: 'Web Scraping Scripts',
+      description: t('projects.webScraping.description'),
+      longDescription: t('projects.webScraping.longDescription'),
+      imageUrl: '/projects/web-scraping.svg',
+      githubUrl: '#',
+      technologies: ['Python', 'BeautifulSoup', 'Selenium', 'Scrapy'],
+      features: [
+        t('projects.webScraping.features.1'),
+        t('projects.webScraping.features.2'),
+        t('projects.webScraping.features.3'),
+        t('projects.webScraping.features.4')
+      ]
+    },
+    {
+      title: 'AI Report Generator',
+      description: t('projects.aiReportGenerator.description'),
+      longDescription: t('projects.aiReportGenerator.longDescription'),
+      imageUrl: '/projects/ai-reports.svg',
+      githubUrl: '#',
+      technologies: ['Python', 'AI/ML', 'Data Analysis'],
+      features: [
+        t('projects.aiReportGenerator.features.1'),
+        t('projects.aiReportGenerator.features.2'),
+        t('projects.aiReportGenerator.features.3'),
+        t('projects.aiReportGenerator.features.4')
+      ]
+    },
+    {
+      title: 'Grupo Sedico México',
+      description: t('projects.grupoSedico.description'),
+      longDescription: t('projects.grupoSedico.longDescription'),
+      imageUrl: '/projects/grupo-sedico.png',
+      githubUrl: '#',
+      demoUrl: 'https://www.gruposedico.mx/',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      features: [
+        t('projects.grupoSedico.features.1'),
+        t('projects.grupoSedico.features.2'),
+        t('projects.grupoSedico.features.3'),
+        t('projects.grupoSedico.features.4')
+      ]
+    },
   ]
 
   return (
