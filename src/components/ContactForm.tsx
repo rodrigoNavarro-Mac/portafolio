@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { FaEnvelope, FaUser, FaCommentDots } from 'react-icons/fa'
+import { FaPaperPlane, FaUser, FaEnvelope, FaComment } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 export default function ContactForm() {
   const t = useTranslations('contact')
@@ -12,7 +13,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('loading')
-    
+
     const formData = new FormData(e.currentTarget)
     const data = {
       name: formData.get('name') as string,
@@ -27,76 +28,115 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-      const responseData = await res.json();
-      console.log('Respuesta de la API:', responseData, 'Status:', res.status);
-      if (res.ok) {
-        setStatus('success')
-        e.currentTarget.reset()
-      } else {
-        setStatus('success') // Mostrar éxito aunque haya error
-      }
+      await res.json();
+      setStatus('success')
     } catch (error) {
-      console.log('Error en la petición fetch:', error);
-      setStatus('success') // Mostrar éxito aunque haya error
+      console.log(error)
+      setStatus('success')
     }
   }
 
   return (
-    <div className="max-w-lg mx-auto bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-lg p-8">
-      <h2 className="text-2xl font-bold text-center mb-6 text-blue-600 dark:text-blue-400">{t('formTitle')}</h2>
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <input type="hidden" name="locale" value={locale} />
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">
-            <FaUser className="inline mr-2" /> {t('name')}
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">
-            <FaEnvelope className="inline mr-2" /> {t('email')}
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition"
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">
-            <FaCommentDots className="inline mr-2" /> {t('message')}
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            required
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition"
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition ${
-            status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
+    <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl relative overflow-hidden">
+      {/* Glow effects */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
+
+      {status === 'success' ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center py-10"
         >
-          {status === 'loading' ? t('sending') : t('send')}
-        </button>
-        {status === 'success' && (
-          <div className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-center">
-            {t('success')}
+          <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+            ✓
           </div>
-        )}
-      </form>
+          <h3 className="text-2xl font-bold text-white mb-2">{t('success')}</h3>
+          <p className="text-gray-400">Thank you for reaching out!</p>
+          <button
+            onClick={() => setStatus('idle')}
+            className="mt-6 text-blue-400 hover:text-white underline"
+          >
+            Send another message
+          </button>
+        </motion.div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+          <input type="hidden" name="locale" value={locale} />
+
+          <div className="space-y-1">
+            <label htmlFor="name" className="text-sm font-medium text-gray-400 ml-1">
+              {t('name')}
+            </label>
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                <FaUser />
+              </div>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-11 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                placeholder={t('name')}
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <label htmlFor="email" className="text-sm font-medium text-gray-400 ml-1">
+              {t('email')}
+            </label>
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                <FaEnvelope />
+              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-11 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                placeholder="john@example.com"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <label htmlFor="message" className="text-sm font-medium text-gray-400 ml-1">
+              {t('message')}
+            </label>
+            <div className="relative">
+              <div className="absolute left-4 top-6 text-gray-500">
+                <FaComment />
+              </div>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-11 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+                placeholder={t('message')}
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            {status === 'loading' ? (
+              <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <>
+                <FaPaperPlane className="text-sm" />
+                {t('send')}
+              </>
+            )}
+          </button>
+        </form>
+      )}
     </div>
   )
-} 
+}

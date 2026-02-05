@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google"; // Import Outfit for headings
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Rodrigo Navarro - Portfolio",
-  description: "Desarrollador Full Stack - Portfolio personal",
+  title: "Rodrigo Navarro | Full Stack Developer",
+  description: "Premium Portfolio of Rodrigo Navarro - Full Stack Developer",
 };
 
 export default function RootLayout({
@@ -15,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className={inter.className}>
-        <main className="min-h-screen bg-white dark:bg-gray-900">
+    <html lang="es" className={`${inter.variable} ${outfit.variable}`}>
+      <body className="antialiased bg-[var(--background)] text-[var(--foreground)] selection:bg-purple-500 selection:text-white">
+        <main className="min-h-screen relative overflow-hidden">
           {children}
         </main>
       </body>

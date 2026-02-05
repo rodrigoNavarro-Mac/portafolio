@@ -1,4 +1,4 @@
-// File: C:\Users\rorib\OneDrive\Documentos\Corevia\portafolio\src\app\layout.tsx
+// File: C:\Users\rnava\Documents\YO\portafolio\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

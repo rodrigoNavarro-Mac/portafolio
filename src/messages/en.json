@@ -2,7 +2,9 @@
   "navigation": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "services": "Services",
+    "projects": "Projects",
     "contact": "Contact"
   },
   "services": {
@@ -18,6 +20,10 @@
     "uiDesign": {
       "title": "UI/UX Design",
       "description": "Design of intuitive and attractive user interfaces."
+    },
+    "cloudDevOps": {
+      "title": "Cloud & DevOps",
+      "description": "Deployment and management of infrastructure (AWS, Docker, S3, Route53, Load Balancers, CI/CD)."
     },
     "customApps": "Development of 100% customized applications (web, desktop, mobile, etc.)",
     "documentation": "Delivery of complete documentation: requirements specification, quotes, invoices, contracts, and UML diagrams",
@@ -35,12 +41,41 @@
     "english": "English",
     "spanish": "Spanish"
   },
+  "experience": {
+    "title": "Professional Experience",
+    "capitalPlus": {
+      "role": "Software Engineer / Automation Engineer",
+      "company": "Capital Plus Bienes Raíces S.A. de C.V.",
+      "period": "August 2025 - Present",
+      "responsibilities": {
+        "1": "Designed and implemented a modular MVC-based automation platform in Python, integrating CRM, inventory, sales pipelines, and reporting via REST APIs and event-driven webhooks, with architecture prepared for high-concurrency workloads.",
+        "2": "Built and maintained 25+ backend automations for leads, inventory, pricing, commissions, analytics, and reporting using Deluge, REST APIs, and webhooks, implementing fault isolation, logging, and monitoring to prevent cascading failures across systems.",
+        "3": "Developed a rule-based lead distribution algorithm in Zoho, implementing pool-style round-robin assignment with availability and geographic constraints, reducing unassigned leads from 40–70% to 0% while maintaining balanced workload distribution.",
+        "4": "Engineered an event-driven inventory and pricing system with state management and reservation locking, prioritizing first-come access and enforcing a 3-day hold window before automatic release, preventing double-booking across concurrent sales workflows.",
+        "5": "Integrated Aircall VoIP using event-driven webhooks (call started), implementing dynamic call routing based on prospect ownership to automatically assign calls to the correct sales agent, with persistence and failure handling.",
+        "6": "Built automated reporting pipelines in Python, aggregating CRM and operational data to generate scheduled KPI reports in PDF format for weekly and monthly executive decision-making.",
+        "7": "Developed web scraping pipelines using Playwright to extract data from static and JavaScript-heavy websites on demand, performing data cleaning and normalization using regular expressions for downstream analysis.",
+        "8": "Designed an internal prototype AI agent using Retrieval-Augmented Generation (RAG), indexing legal and technical PDF documents in Pinecone to enable semantic search with embeddings and controlled internal access.",
+        "9": "Reduced customer response times from 1–3 hours to under 30 minutes by automating call assignment, lead routing, and SLA measurement through integrated VoIP events and real-time operational metrics."
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "degree": "B.S. in Computer Systems Engineering",
+    "institution": "Instituto Tecnológico Superior de Atlixco",
+    "period": "2021-2026"
+  },
+  "languages": {
+    "title": "Languages",
+    "spanish": "Spanish: Native",
+    "english": "English: B2"
+  },
   "projects": {
     "title": "My Projects",
-    "viewGithub": "View on GitHub",
-    "viewDemo": "View Demo",
+    "viewDemo": "Visit Site",
     "ebenezer": {
-      "description": "Comprehensive management system for clinical laboratories with appointment and branch administration.",
+      "description": "Clinical Laboratory Management System: Appointment scheduling, service management, multi-branch support, and admin panel.",
       "longDescription": "Complete management system for clinical laboratories that allows modifying images and text throughout the page, scheduling medical appointments, managing patient appointments, uploading laboratory services, and registering branches. Includes a complete administrative panel for comprehensive laboratory management.",
       "features": {
         "1": "Medical appointment and service management by branch",
@@ -50,7 +85,7 @@
       }
     },
     "sitdr": {
-      "description": "Comprehensive tutoring system.",
+      "description": "Academic Monitoring Platform: Student tracking, tutor assignments, and academic reporting.",
       "longDescription": "University tutoring platform to monitor and manage students' academic progress. Includes tools for tracking tutors and students, detailed academic reports, personalized tutoring plans, and advanced analytics. The system improved tutor efficiency by 30% and student engagement by 25%, enabling data-driven academic interventions and personalized reporting.",
       "features": {
         "1": "Detailed tracking of tutors and students",
@@ -70,7 +105,7 @@
       }
     },
     "srg": {
-      "description": "Resource management system.",
+      "description": "Gym Management System (SRG Vortex): Memberships, attendance tracking, class scheduling, and sales management.",
       "longDescription": "Comprehensive system to automate the management of memberships, check-ins, classes, sales, and cash register control in a gym. The system reduces administrative workload, improves user experience, and optimizes daily operations. Benefits: automation of records, flexibility for memberships and classes, detailed financial control, operational efficiency, and real-time reporting. Achieves a 50% reduction in administrative tasks and enhanced member experience with features like automated check-ins and real-time class scheduling.",
       "features": {
         "1": "Automated management of memberships and check-ins",
@@ -80,7 +115,7 @@
       }
     },
     "webScraping": {
-      "description": "Automated web scraping scripts for data extraction.",
+      "description": "Market Intelligence Scraper: Automated real estate data extraction and normalization.",
       "longDescription": "Collection of web scraping scripts developed in Python using libraries like BeautifulSoup, Selenium, and Scrapy. These scripts allow automated extraction of information from websites, processing structured data, and storing it in different formats. They include error handling, respect for wait times between requests, and support for dynamic JavaScript websites.",
       "features": {
         "1": "Automated data extraction from websites",
@@ -90,7 +125,7 @@
       }
     },
     "aiReportGenerator": {
-      "description": "Intelligent report generator with artificial intelligence.",
+      "description": "Automated Analytics Platform: Data pipelines for KPI generation, validation, and executive dashboards.",
       "longDescription": "Automatic report generation system using artificial intelligence to analyze data, identify patterns, and create professional documents. The system processes information from multiple sources, generates automatic insights, and produces personalized reports with visualizations and detailed analysis. Uses language models to summarize information and create coherent narratives based on analyzed data.",
       "features": {
         "1": "Automatic report generation with AI",
@@ -100,7 +135,7 @@
       }
     },
     "grupoSedico": {
-      "description": "Corporate website for Grupo Sedico México - PET plastic container manufacturer.",
+      "description": "Corporate Website - Grupo Sedico México: Conversion-focused responsive corporate website.",
       "longDescription": "Modern and responsive website developed for Grupo Sedico México, a leading manufacturer of PET plastic containers. The platform features product catalog, custom manufacturing services, corporate information, and contact system. Includes conversion-optimized design, featured products sections, information about manufacturing processes, and integrated contact forms. The site reflects the company's brand identity and facilitates communication with potential customers.",
       "features": {
         "1": "Product catalog with detailed information",
@@ -108,11 +143,41 @@
         "3": "Contact system and integrated forms",
         "4": "Presentation of services and manufacturing processes"
       }
+    },
+    "sanMarco": {
+      "description": "Website for Italian restaurant San Marco Ristorante.",
+      "longDescription": "Elegant web platform for San Marco Ristorante, showcasing authentic Italian cuisine. The site includes an interactive digital menu, online reservation system, dish gallery, special events information, and contact section. Sophisticated design that reflects the restaurant's gastronomic experience with professional food photography and intuitive navigation.",
+      "features": {
+        "1": "Interactive digital menu with professional photography",
+        "2": "Online reservation system",
+        "3": "Dish gallery and special events",
+        "4": "Elegant and responsive design"
+      }
+    },
+    "puntoTierra": {
+      "description": "Real estate website for Punto Tierra - Sustainable projects.",
+      "longDescription": "Modern real estate platform for Punto Tierra, specializing in sustainable and eco-friendly real estate projects. The site features available property catalog, detailed project information, financing calculator, virtual tours, and contact system. Minimalist design with earth tones reflecting commitment to sustainability and nature.",
+      "features": {
+        "1": "Sustainable property catalog",
+        "2": "Virtual tours and image galleries",
+        "3": "Integrated financing calculator",
+        "4": "Eco-friendly design with brand identity"
+      }
+    },
+    "capitalPlus": {
+      "description": "Real Estate Management Platform: Backend system for CRM, inventory control, automation logic, and executive reporting.",
+      "longDescription": "Comprehensive business management system for Capital Plus featuring AI agent for automated analysis, advanced performance metrics visualization, and commission tracking system. The platform offers customizable dashboards, AI-powered automated reports, predictive sales analytics, and complete sales team management. Includes real-time notifications and data-driven decision-making tools.",
+      "features": {
+        "1": "AI agent for automated and predictive analysis",
+        "2": "Real-time metrics and KPI dashboard",
+        "3": "Commission tracking and calculation system",
+        "4": "Automated reports and data visualization"
+      }
     }
   },
   "about": {
     "title": "About Me",
-    "description": "I am a Full Stack developer focused on creating modern, efficient, and scalable web solutions. I have practical experience with technologies such as React, Node.js, SQL, and NoSQL, which allows me to design and implement robust end-to-end applications. I am a Computer Systems Engineer with a specialization in Software Engineering, and I am certified by Google in Cybersecurity, which gives me a comprehensive vision of building secure, reliable, and high-performance systems. I am passionate about technological innovation, continuous improvement, and developing products that provide real value."
+    "description": "Backend and Automation Engineer with hands-on experience designing and operating high-concurrency backend systems, business-critical automations, and data-driven platforms. Strong background in Python, Django, REST APIs, and event-driven integrations. Proven ability to reduce operational bottlenecks, improve SLA performance, and deliver measurable business impact through clean architecture and system-level automation."
   },
   "contact": {
     "title": "Contact",
@@ -123,12 +188,11 @@
     "send": "Send",
     "sending": "Sending...",
     "success": "Message sent successfully!"
-    },
-
+  },
   "hero": {
     "title": "Rodrigo Navarro",
-    "subtitle": "Computer Systems Engineer",
+    "subtitle": "Software Engineer | Backend, Automation & Scalable Systems",
     "projects": "View Projects",
     "contact": "Contact"
   }
-} 
+}

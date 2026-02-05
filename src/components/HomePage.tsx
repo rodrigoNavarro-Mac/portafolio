@@ -4,26 +4,100 @@ import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Navbar from './Navbar'
 import Hero from './Hero'
+import Experience from './Experience'
 import ProjectCard from './ProjectCard'
 import ContactForm from './ContactForm'
 import Services from './Services'
+import Footer from './Footer'
+import Education from './Education'
 
 export default function HomePage() {
   const t = useTranslations()
 
   const projects = [
     {
+      title: 'Grupo Sedico México',
+      description: t('projects.grupoSedico.description'),
+      longDescription: t('projects.grupoSedico.longDescription'),
+      imageUrl: '/projects/grupo-sedico.png',
+      demoUrl: 'https://www.gruposedico.mx/',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      features: [
+        t('projects.grupoSedico.features.1'),
+        t('projects.grupoSedico.features.2'),
+        t('projects.grupoSedico.features.3'),
+        t('projects.grupoSedico.features.4')
+      ]
+    },
+    {
       title: 'Ebenezer',
       description: t('projects.ebenezer.description'),
       longDescription: t('projects.ebenezer.longDescription'),
       imageUrl: '/projects/ebenezer.jpg',
       githubUrl: 'https://github.com/rodrigoNavarro-Mac/Ebenezer',
+      demoUrl: 'https://ebenezerservmed.mx/',
       technologies: ['Django', 'React', 'PostgreSQL'],
       features: [
         t('projects.ebenezer.features.1'),
         t('projects.ebenezer.features.2'),
         t('projects.ebenezer.features.3'),
         t('projects.ebenezer.features.4')
+      ]
+    },
+    {
+      title: 'DanJVicGarageDoors',
+      description: t('projects.danjvic.description'),
+      longDescription: t('projects.danjvic.longDescription'),
+      imageUrl: '/projects/danjvic.jpg',
+      githubUrl: 'https://github.com/DJVICGARAGE/DanJVicGarageDoors',
+      demoUrl: 'https://www.danjvic.com/',
+      technologies: ['Django', 'React', 'PostgreSQL'],
+      features: [
+        t('projects.danjvic.features.1'),
+        t('projects.danjvic.features.2'),
+        t('projects.danjvic.features.3'),
+        t('projects.danjvic.features.4')
+      ]
+    },
+    {
+      title: 'San Marco Ristorante',
+      description: t('projects.sanMarco.description'),
+      longDescription: t('projects.sanMarco.longDescription'),
+      imageUrl: '/projects/san-marco.png',
+      demoUrl: 'https://sanmarcoristorante.com/',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      features: [
+        t('projects.sanMarco.features.1'),
+        t('projects.sanMarco.features.2'),
+        t('projects.sanMarco.features.3'),
+        t('projects.sanMarco.features.4')
+      ]
+    },
+    {
+      title: 'Punto Tierra',
+      description: t('projects.puntoTierra.description'),
+      longDescription: t('projects.puntoTierra.longDescription'),
+      imageUrl: '/projects/punto-tierra.png',
+      demoUrl: 'https://puntotierra.mx/',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      features: [
+        t('projects.puntoTierra.features.1'),
+        t('projects.puntoTierra.features.2'),
+        t('projects.puntoTierra.features.3'),
+        t('projects.puntoTierra.features.4')
+      ]
+    },
+    {
+      title: 'Capital Plus',
+      description: t('projects.capitalPlus.description'),
+      longDescription: t('projects.capitalPlus.longDescription'),
+      imageUrl: '/projects/capital-plus.png',
+      technologies: ['Next.js', 'React', 'TypeScript', 'AI/ML', 'PostgreSQL'],
+      features: [
+        t('projects.capitalPlus.features.1'),
+        t('projects.capitalPlus.features.2'),
+        t('projects.capitalPlus.features.3'),
+        t('projects.capitalPlus.features.4')
       ]
     },
     {
@@ -38,20 +112,6 @@ export default function HomePage() {
         t('projects.sitdr.features.2'),
         t('projects.sitdr.features.3'),
         t('projects.sitdr.features.4')
-      ]
-    },
-    {
-      title: 'DanJVicGarageDoors',
-      description: t('projects.danjvic.description'),
-      longDescription: t('projects.danjvic.longDescription'),
-      imageUrl: '/projects/danjvic.jpg',
-      githubUrl: 'https://github.com/DJVICGARAGE/DanJVicGarageDoors',
-      technologies: ['Django', 'React', 'PostgreSQL'],
-      features: [
-        t('projects.danjvic.features.1'),
-        t('projects.danjvic.features.2'),
-        t('projects.danjvic.features.3'),
-        t('projects.danjvic.features.4')
       ]
     },
     {
@@ -72,7 +132,7 @@ export default function HomePage() {
       title: 'Web Scraping Scripts',
       description: t('projects.webScraping.description'),
       longDescription: t('projects.webScraping.longDescription'),
-      imageUrl: '/projects/web-scraping.svg',
+      imageUrl: '/projects/web-scraping.png',
       githubUrl: 'https://github.com/rodrigoNavarro-Mac',
       technologies: ['Python', 'BeautifulSoup', 'Selenium', 'Scrapy'],
       features: [
@@ -86,8 +146,7 @@ export default function HomePage() {
       title: 'AI Report Generator',
       description: t('projects.aiReportGenerator.description'),
       longDescription: t('projects.aiReportGenerator.longDescription'),
-      imageUrl: '/projects/ai-reports.svg',
-      githubUrl: '#',
+      imageUrl: '/projects/ai-reports.png',
       technologies: ['Python', 'AI/ML', 'Data Analysis'],
       features: [
         t('projects.aiReportGenerator.features.1'),
@@ -96,82 +155,61 @@ export default function HomePage() {
         t('projects.aiReportGenerator.features.4')
       ]
     },
-    {
-      title: 'Grupo Sedico México',
-      description: t('projects.grupoSedico.description'),
-      longDescription: t('projects.grupoSedico.longDescription'),
-      imageUrl: '/projects/grupo-sedico.png',
-      githubUrl: '#',
-      demoUrl: 'https://www.gruposedico.mx/',
-      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-      features: [
-        t('projects.grupoSedico.features.1'),
-        t('projects.grupoSedico.features.2'),
-        t('projects.grupoSedico.features.3'),
-        t('projects.grupoSedico.features.4')
-      ]
-    },
   ]
 
-  // Skills data with colors for modern design
   const skills = [
-    { name: 'React', color: 'from-cyan-400 to-blue-500' },
-    { name: 'Node.js', color: 'from-green-400 to-emerald-600' },
-    { name: 'MongoDB', color: 'from-green-500 to-green-700' },
-    { name: 'PostgreSQL', color: 'from-blue-500 to-indigo-600' },
-    { name: 'TypeScript', color: 'from-blue-600 to-blue-800' },
-    { name: 'Tailwind CSS', color: 'from-teal-400 to-cyan-600' }
+    { name: 'Python', color: 'bg-yellow-500' },
+    { name: 'Django', color: 'bg-green-700' },
+    { name: 'JavaScript', color: 'bg-yellow-400' },
+    { name: 'TypeScript', color: 'bg-blue-600' },
+    { name: 'PostgreSQL', color: 'bg-blue-500' },
+    { name: 'MongoDB', color: 'bg-green-600' },
+    { name: 'Zoho CRM/Deluge', color: 'bg-purple-600' },
+    { name: 'Web Scraping', color: 'bg-orange-500' },
+    { name: 'RAG/LLMs', color: 'bg-pink-600' },
+    { name: 'Git', color: 'bg-red-500' }
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#030712] text-white overflow-hidden">
       <Navbar />
       <Hero />
       <Services />
 
-      {/* Projects Section - Enhanced Design */}
-      <section id="projects" className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        
+      {/* Projects Section */}
+      <section id="projects" className="relative py-32 bg-[#050914]">
+        {/* Background elements */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="inline-block"
-            >
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
                 {t('projects.title')}
-              </h2>
-              <div className="h-1.5 w-32 mx-auto bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"></div>
-            </motion.div>
+              </span>
+            </h2>
           </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* Grid de proyectos - Bento Style */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-[minmax(400px,auto)]">
+            {/* Featured Project Large? For simplicity main grid first */}
             {projects.map((project, index) => (
               <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1
                 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="h-full"
               >
                 <ProjectCard {...project} />
               </motion.div>
@@ -180,127 +218,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section - Enhanced Design */}
-      <section id="about" className="relative py-24 overflow-hidden bg-white dark:bg-gray-900">
-        {/* Animated background pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
+      {/* About Section */}
+      <section id="about" className="relative py-32 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-50 pointer-events-none" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            {/* Title with gradient */}
-            <motion.div
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-4xl md:text-6xl font-bold mb-12"
             >
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
-                {t('about.title')}
-              </h2>
-              <div className="h-1.5 w-24 mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full"></div>
-            </motion.div>
-            
-            {/* Description with better styling */}
-            <motion.div
+              {t('about.title')}
+            </motion.h2>
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="text-xl md:text-2xl leading-relaxed text-gray-300 font-light mb-16"
             >
-              <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
-                {t('about.description')}
-              </p>
-            </motion.div>
-            
-            {/* Skills with modern cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              {skills.map((skill, index) => (
+              {t('about.description')}
+            </motion.p>
+
+            {/* Tech Stack Marquee (Static grid for now but styled) */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {skills.map((skill, i) => (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.4, 
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 200
-                  }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.1,
-                    rotate: [0, -5, 5, -5, 0],
-                    transition: { duration: 0.3 }
-                  }}
-                  className="group relative"
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                  <div className="relative bg-white dark:bg-gray-800 px-6 py-3 rounded-2xl border-2 border-transparent group-hover:border-white dark:group-hover:border-gray-700 transition-all duration-300 shadow-lg">
-                    <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-r ${skill.color} text-lg`}>
-                      {skill.name}
-                    </span>
-                  </div>
+                  <div className={`w-2 h-2 rounded-full ${skill.color}`} />
+                  <span className="font-mono text-sm">{skill.name}</span>
                 </motion.div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section - Enhanced Design */}
-      <section id="contact" className="relative py-24 overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        
+      {/* Contact Section */}
+      <section id="contact" className="relative py-32 bg-[#050914] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1),transparent_70%)]" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            {/* Title with gradient */}
-            <motion.div
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
-                {t('contact.title')}
-              </h2>
-              <div className="h-1.5 w-24 mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full"></div>
-            </motion.div>
-            
-            {/* Contact form with card effect */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700"
-            >
-              <ContactForm />
-            </motion.div>
-          </motion.div>
+          <div className="max-w-xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('contact.title')}</h2>
+            <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
+          </div>
+
+          <div className="max-w-xl mx-auto">
+            <ContactForm />
+          </div>
         </div>
       </section>
+
+      <Experience />
+      <Education />
+
+      <Footer />
     </div>
   )
-} 
+}
