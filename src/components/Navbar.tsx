@@ -159,7 +159,7 @@ export default function Navbar() {
               transition={{ delay: 0.1 }}
               className="flex flex-col items-center gap-8"
             >
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.id}
                   href={item.href}

@@ -7,13 +7,14 @@ import { useRef, useState, useEffect } from 'react'
 import { FaArrowDown } from 'react-icons/fa'
 import { AnimatePresence } from 'framer-motion'
 
+const phrases = [
+  "Hello World",
+  "Full Stack Dev",
+  "Creative Coder",
+  "UI/UX Lover"
+]
+
 const RotatingText = () => {
-  const phrases = [
-    "Hello World",
-    "Full Stack Dev",
-    "Creative Coder",
-    "UI/UX Lover"
-  ]
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
