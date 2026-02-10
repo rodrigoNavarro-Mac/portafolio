@@ -22,7 +22,7 @@ const RotatingText = () => {
       setIndex((prev) => (prev + 1) % phrases.length)
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [phrases.length])
 
   return (
     <div className="relative h-5 w-24 md:w-28 overflow-hidden text-left">
