@@ -12,7 +12,7 @@
       "static/chunks/4bd1b696-299743f5624cdabe.js",
       "static/chunks/684-0c29628442dee650.js",
       "static/chunks/main-app-de68d2ed30f4dda8.js",
-      "static/css/b4ddf16952a639b0.css",
+      "static/css/d9e909462fe9f9db.css",
       "static/chunks/app/layout-f1546d3201f59082.js"
     ],
     "/api/contact/route": [
@@ -45,7 +45,7 @@
       "static/chunks/8e1d74a4-be733547b6313aef.js",
       "static/chunks/385-db5fce1ef69c29b6.js",
       "static/chunks/588-d54aec0dc82d2c1d.js",
-      "static/chunks/app/[locale]/page-051beb2e5adc0136.js"
+      "static/chunks/app/[locale]/page-f176dce3718e9376.js"
     ]
   }
 }

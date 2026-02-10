@@ -157,28 +157,30 @@
     },
     "puntoTierra": {
       "description": "Sitio web inmobiliario para Punto Tierra - Proyectos sustentables.",
-      "longDescription": "Plataforma inmobiliaria moderna para Punto Tierra, especializada en proyectos de bienes raíces sustentables y ecológicos. El sitio presenta catálogo de propiedades disponibles, información detallada de cada proyecto, calculadora de financiamiento, tours virtuales y sistema de contacto. Diseño minimalista con tonos tierra que reflejan el compromiso con la sustentabilidad y la naturaleza.",
+      "longDescription": "Plataforma inmobiliaria moderna para Punto Tierra, especializada en proyectos de bienes raíces sustentables y ecológicos en Puebla, Cancún y Mérida. El sitio presenta catálogo de propiedades residenciales, comerciales y desarrollos, con información detallada de cada proyecto, galerías de imágenes y sistema de contacto integrado con CRM. Diseño minimalista con tonos tierra que reflejan el compromiso con la sustentabilidad y la naturaleza.",
       "features": {
-        "1": "Catálogo de propiedades sustentables",
-        "2": "Tours virtuales y galerías de imágenes",
-        "3": "Calculadora de financiamiento integrada",
-        "4": "Diseño eco-friendly con identidad de marca"
+        "1": "Catálogo completo de propiedades sustentables (residenciales, comerciales, desarrollos)",
+        "2": "Galerías de imágenes con visualización interactiva",
+        "3": "Sistema de leads integrado con Zoho CRM y tracking de campañas",
+        "4": "Diseño eco-friendly optimizado para SEO y conversión"
       }
     },
     "capitalPlus": {
-      "description": "Plataforma de Gestión Inmobiliaria: Sistema backend para CRM, control de inventario y automatización.",
-      "longDescription": "Sistema integral de gestión empresarial para Capital Plus que incluye agente de IA para análisis automatizado, visualización avanzada de métricas de rendimiento y sistema de seguimiento de comisiones. La plataforma ofrece dashboards personalizables, reportes automatizados con inteligencia artificial, análisis predictivo de ventas y gestión completa del equipo comercial. Incluye notificaciones en tiempo real y herramientas de toma de decisiones basadas en datos.",
+      "description": "Plataforma integral de IA para gestión inmobiliaria: CRM, automatización con WhatsApp, comisiones y marketing digital.",
+      "longDescription": "Sistema empresarial completo para Capital Plus que combina inteligencia artificial con automatización de procesos. Incluye agente RAG para consultas documentales, bot de WhatsApp con clasificación de intenciones, sistema dual de comisiones (egresos internos e ingresos de socios), integración completa con Zoho CRM y dashboards analíticos en tiempo real. La plataforma ofrece procesamiento inteligente de documentos, análisis predictivo de ventas, gestión de equipo comercial y herramientas de toma de decisiones basadas en datos.",
       "features": {
-        "1": "Agente de IA para análisis automatizado y predictivo",
-        "2": "Dashboard de métricas y KPIs en tiempo real",
-        "3": "Sistema de seguimiento y cálculo de comisiones",
-        "4": "Reportes automatizados y visualización de datos"
+        "1": "Agente de IA RAG para análisis de documentos corporativos",
+        "2": "Bot de WhatsApp con clasificación de intenciones y flujos automatizados",
+        "3": "Sistema dual de comisiones: egresos internos por fases e ingresos de socios",
+        "4": "Integración bidireccional con Zoho CRM (leads, deals, notas)",
+        "5": "Dashboards analíticos con métricas de ventas, comisiones y rendimiento",
+        "6": "Sistema de procesamiento de documentos con vector database (Pinecone)"
       }
     }
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Ingeniero de Backend y Automatización con experiencia práctica diseñando y operando sistemas backend de alta concurrencia, automatizaciones críticas para el negocio y plataformas impulsadas por datos. Sólida experiencia en Python, Django, APIs REST e integraciones impulsadas por eventos. Capacidad demostrada para reducir cuellos de botella operativos, mejorar métricas de SLA y generar impacto comercial medible a través de arquitectura limpia y automatización a nivel de sistema."
+    "description": "Ingeniero de Backend y Automatización con experiencia práctica diseñando y operando sistemas backend, automatizaciones críticas para el negocio y plataformas impulsadas por datos. Sólida experiencia en Python, Django, APIs REST e integraciones impulsadas por eventos. Capacidad demostrada para reducir cuellos de botella operativos, mejorar métricas de SLA y generar impacto comercial medible a través de arquitectura limpia y automatización a nivel de sistema."
   },
   "contact": {
     "title": "Contacto",

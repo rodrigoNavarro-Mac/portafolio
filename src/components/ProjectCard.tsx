@@ -2,8 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FaLock, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -28,26 +27,17 @@ export default function ProjectCard({
   longDescription,
   features,
 }: ProjectCardProps) {
-  const t = useTranslations('projects')
   const [showOverlay, setShowOverlay] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
 
   const isPrivate = !demoUrl
-  const showGithub = githubUrl && githubUrl !== '#'
+  const showGithub = githubUrl && githubUrl && githubUrl !== '#'
 
   return (
     <>
       <motion.div
-        className="group relative bg-[#0b0f19] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] h-full flex flex-col"
+        className="group relative bg-[#0b0f19] border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] h-full flex flex-col cursor-pointer"
         whileHover={{ y: -5 }}
-        onClick={() => isMobile && setShowOverlay(true)}
+        onClick={() => setShowOverlay(true)}
       >
         {/* Mobile/Desktop badge */}
         {isPrivate && (
@@ -70,9 +60,10 @@ export default function ProjectCard({
         {/* Content Section */}
         <div className="p-6 flex flex-col flex-grow relative">
           <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
+
           <div className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed space-y-3">
-            <p>{longDescription || description}</p>
-            {/* Render features on desktop/card if desired, or keep clean */}
+            {/* Show short description on card, detailed in modal */}
+            <p className="line-clamp-3">{description}</p>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
@@ -90,31 +81,18 @@ export default function ProjectCard({
           </div>
 
           <div className="flex gap-3 mt-auto">
-            {demoUrl && (
-              <Link
-                href={demoUrl}
-                target="_blank"
-                className="flex-1 flex items-center justify-center gap-2 bg-white text-black font-semibold py-3 rounded-xl hover:bg-gray-200 transition-colors text-sm"
-              >
-                <FaExternalLinkAlt /> {t('viewDemo')}
-              </Link>
-            )}
-            {showGithub && (
-              <Link
-                href={githubUrl}
-                target="_blank"
-                className={`flex items-center justify-center bg-white/5 hover:bg-white/10 text-white rounded-xl transition-colors border border-white/10 ${!demoUrl ? 'flex-1 py-3 text-sm font-semibold gap-2' : 'w-12 text-lg'}`}
-              >
-                <FaGithub /> {!demoUrl && t('viewGithub')}
-              </Link>
-            )}
+            <button
+              className="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm transition-colors"
+            >
+              Ver Detalles
+            </button>
           </div>
         </div>
       </motion.div>
 
-      {/* Mobile Details Overlay */}
+      {/* Details Overlay (Mobile & Desktop) */}
       <AnimatePresence>
-        {isMobile && showOverlay && (
+        {showOverlay && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -123,42 +101,56 @@ export default function ProjectCard({
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-4"
           >
             <motion.div
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              exit={{ y: 100 }}
+              initial={{ y: 100, scale: 0.9 }}
+              animate={{ y: 0, scale: 1 }}
+              exit={{ y: 100, scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-md p-6 max-h-[80vh] overflow-y-auto"
+              className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-2xl p-6 max-h-[85vh] overflow-y-auto relative shadow-2xl shadow-blue-900/20"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-white">{title}</h3>
-                <button onClick={() => setShowOverlay(false)} className="text-white/50 hover:text-white p-2 text-2xl">×</button>
+              <button
+                onClick={() => setShowOverlay(false)}
+                className="absolute top-4 right-4 text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+              >
+                ✕
+              </button>
+
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 pr-10">{title}</h3>
+
+              <div className="text-gray-300 mb-8 leading-relaxed text-base md:text-lg">
+                {longDescription || description}
               </div>
 
-              <p className="text-gray-300 mb-6">{longDescription || description}</p>
-
-              {features && (
-                <div className="mb-6">
-                  <h4 className="text-sm font-bold text-gray-500 uppercase mb-3">Key Features</h4>
-                  <ul className="space-y-2">
+              {features && features.length > 0 && (
+                <div className="mb-8 bg-white/5 rounded-xl p-5 border border-white/5">
+                  <h4 className="text-sm font-bold text-blue-400 uppercase mb-4 tracking-wider">Key Features</h4>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {features.map((feature, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-gray-400">
-                        <span className="text-blue-500">▹</span>
-                        {feature}
+                      <li key={i} className="flex gap-3 text-sm text-gray-300">
+                        <span className="text-blue-500 mt-1">▹</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 mt-auto pt-4 border-t border-white/10">
                 {demoUrl && (
-                  <Link href={demoUrl} target="_blank" className="flex-1 bg-blue-600 text-white py-3 rounded-xl font-semibold text-center">
-                    Live Demo
+                  <Link
+                    href={demoUrl}
+                    target="_blank"
+                    className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-semibold text-center hover:bg-blue-500 transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-sm" /> Live Demo
                   </Link>
                 )}
                 {showGithub && (
-                  <Link href={githubUrl} target="_blank" className="flex-1 bg-white/10 text-white py-3 rounded-xl font-semibold text-center">
-                    GitHub
+                  <Link
+                    href={githubUrl}
+                    target="_blank"
+                    className="flex-1 flex items-center justify-center gap-2 bg-white/10 text-white py-3 rounded-xl font-semibold text-center hover:bg-white/20 transition-colors"
+                  >
+                    <FaGithub className="text-lg" /> GitHub
                   </Link>
                 )}
               </div>

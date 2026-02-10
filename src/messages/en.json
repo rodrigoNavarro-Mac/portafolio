@@ -157,22 +157,24 @@
     },
     "puntoTierra": {
       "description": "Real estate website for Punto Tierra - Sustainable projects.",
-      "longDescription": "Modern real estate platform for Punto Tierra, specializing in sustainable and eco-friendly real estate projects. The site features available property catalog, detailed project information, financing calculator, virtual tours, and contact system. Minimalist design with earth tones reflecting commitment to sustainability and nature.",
+      "longDescription": "Modern real estate platform for Punto Tierra, specializing in sustainable and eco-friendly real estate projects in Puebla, Cancún, and Mérida. The site features a catalog of residential, commercial, and development properties, with detailed information on each project, interactive image galleries, and a contact system integrated with CRM. Minimalist design with earth tones reflecting commitment to sustainability and nature.",
       "features": {
-        "1": "Sustainable property catalog",
-        "2": "Virtual tours and image galleries",
-        "3": "Integrated financing calculator",
-        "4": "Eco-friendly design with brand identity"
+        "1": "Complete catalog of sustainable properties (residential, commercial, developments)",
+        "2": "Image galleries with interactive visualization",
+        "3": "Lead system integrated with Zoho CRM and campaign tracking",
+        "4": "Eco-friendly design optimized for SEO and conversion"
       }
     },
     "capitalPlus": {
-      "description": "Real Estate Management Platform: Backend system for CRM, inventory control, automation logic, and executive reporting.",
-      "longDescription": "Comprehensive business management system for Capital Plus featuring AI agent for automated analysis, advanced performance metrics visualization, and commission tracking system. The platform offers customizable dashboards, AI-powered automated reports, predictive sales analytics, and complete sales team management. Includes real-time notifications and data-driven decision-making tools.",
+      "description": "Comprehensive AI platform for real estate management: CRM, WhatsApp automation, commissions, and digital marketing.",
+      "longDescription": "Complete business system for Capital Plus combining artificial intelligence with process automation. Includes RAG agent for document queries, WhatsApp bot with intent classification, dual commission system (internal expenses by phases and partner income), full integration with Zoho CRM, and real-time analytical dashboards. The platform offers intelligent document processing, predictive sales analysis, sales team management, and data-driven decision-making tools.",
       "features": {
-        "1": "AI agent for automated and predictive analysis",
-        "2": "Real-time metrics and KPI dashboard",
-        "3": "Commission tracking and calculation system",
-        "4": "Automated reports and data visualization"
+        "1": "RAG AI Agent for corporate document analysis",
+        "2": "WhatsApp Bot with intent classification and automated flows",
+        "3": "Dual commission system: internal expenses by phases and partner income",
+        "4": "Bidirectional integration with Zoho CRM (leads, deals, notes)",
+        "5": "Analytical dashboards with sales, commissions, and performance metrics",
+        "6": "Document processing system with vector database (Pinecone)"
       }
     }
   },
