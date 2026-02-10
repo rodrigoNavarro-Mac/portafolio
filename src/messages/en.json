@@ -73,6 +73,7 @@
   },
   "projects": {
     "title": "My Projects",
+    "viewGithub": "View on GitHub",
     "viewDemo": "Visit Site",
     "ebenezer": {
       "description": "Clinical Laboratory Management System: Appointment scheduling, service management, multi-branch support, and admin panel.",
