@@ -1,36 +1,34 @@
 {
-  "name": "portfolio",
+  "name": "rodrigo-navarro-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
-    "@types/nodemailer": "^6.4.17",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.9.2",
-    "next": "15.3.6",
-    "next-intl": "^4.1.0",
-    "nodemailer": "^6.10.1",
-    "portfolio": "file:",
-    "postcss": "^8.5.3",
+    "next": "16.3.5",
+    "next-intl": "4.14.4",
+    "nodemailer": "10.0.9",
+    "postcss": "8.5.28",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.1",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^20",
+    "@types/nodemailer": "8.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.6",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.5",
     "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }

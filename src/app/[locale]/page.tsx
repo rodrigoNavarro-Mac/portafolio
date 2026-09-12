@@ -6,16 +6,11 @@ interface PageProps {
 }
 
 export default async function Page({ params }: PageProps) {
-  try {
-    const resolvedParams = await params
-    const locale = resolvedParams?.locale
+  const { locale } = await params
 
-    if (!locale || !['en', 'es'].includes(locale)) {
-      redirect('/en')
-    }
-
-    return <HomePage />
-  } catch {
-    redirect('/en')
+  if (locale !== 'en' && locale !== 'es') {
+    redirect('/es')
   }
-} 
+
+  return <HomePage />
+}

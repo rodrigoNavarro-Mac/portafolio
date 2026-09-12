@@ -1,29 +1,22 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 export default function LanguageSelector() {
-  const router = useRouter()
-  const currentLocale = useLocale()
+  const locale = useLocale()
   const t = useTranslations('common')
-
-  // Determina el idioma y la bandera a mostrar (el idioma al que cambiará)
-  const nextLocale = currentLocale === 'es' ? 'en' : 'es'
-  const flag = nextLocale === 'es' ? '🇲🇽' : '🇺🇸'
-  const label = nextLocale === 'es' ? t('spanish') : t('english')
-
-  const toggleLanguage = () => {
-    router.push(`/${nextLocale}`)
-  }
+  const targetLocale = locale === 'es' ? 'en' : 'es'
 
   return (
-    <button
-      onClick={toggleLanguage}
-      className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+    <Link
+      href={`/${targetLocale}`}
+      className="language-switch"
+      aria-label={`${t('language')}: ${targetLocale === 'es' ? t('spanish') : t('english')}`}
     >
-      <span>{flag}</span>
-      <span>{label}</span>
-    </button>
+      <span className={locale === 'es' ? 'is-current' : undefined}>ES</span>
+      <span aria-hidden="true">/</span>
+      <span className={locale === 'en' ? 'is-current' : undefined}>EN</span>
+    </Link>
   )
-} 
+}
