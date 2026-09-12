@@ -16,18 +16,25 @@
     "resume": "Descargar CV"
   },
   "hero": {
-    "eyebrow": "Rodrigo Navarro · Software Engineer",
-    "title": "Construyo productos digitales de principio a fin.",
-    "description": "Combino IA, desarrollo web, backend y automatización para convertir necesidades reales en software útil, claro y mantenible.",
+    "eyebrow": "Software Engineer · Producto + Sistemas",
+    "firstName": "Rodrigo",
+    "lastName": "Navarro",
+    "fullName": "Rodrigo Navarro",
+    "role": "Software Engineer",
+    "location": "Puebla · México",
+    "coordinate": "18.9° N / 98.4° W",
+    "title": "Pienso en sistemas. Entrego producto.",
+    "description": "Diseño y construyo software completo: desde la interfaz que usa una persona hasta la arquitectura, los datos y las integraciones que lo sostienen.",
     "primaryCta": "Explorar proyectos",
     "secondaryCta": "Descargar CV",
     "githubCta": "Ver GitHub",
-    "mapLabel": "Mapa de capacidades de Rodrigo Navarro",
-    "mapCenter": "RN",
-    "mapAi": "IA + DATOS",
-    "mapWeb": "WEB + PRODUCTO",
-    "mapBackend": "BACKEND + SISTEMAS",
-    "mapAutomation": "AUTOMATIZACIÓN"
+    "mapLabel": "Proceso de trabajo de Rodrigo Navarro",
+    "systemLabel": "De problema a operación",
+    "systemStep1": "Entender",
+    "systemStep2": "Diseñar",
+    "systemStep3": "Construir",
+    "systemStep4": "Operar",
+    "systemOutput": "Producto real"
   },
   "proof": {
     "ariaLabel": "Resumen profesional",
@@ -35,15 +42,16 @@
     "automationsLabel": "automatizaciones implementadas",
     "scopeValue": "Punta a punta",
     "scopeLabel": "producto · código · producción",
-    "focusValue": "IA · Web · Backend",
-    "focusLabel": "un perfil, varias capas",
+    "focusValue": "10 sistemas",
+    "focusLabel": "selección de proyectos",
     "languagesValue": "ES nativo · EN B2",
     "languagesLabel": "comunicación"
   },
   "work": {
     "eyebrow": "Trabajo seleccionado",
     "title": "Sistemas reales, explicados desde las decisiones.",
-    "intro": "Cuatro proyectos para entender cómo pienso, qué construí y cómo conecto producto, tecnología y operación.",
+    "intro": "Diez proyectos para ver amplitud y profundidad: cuatro casos explicados a detalle y seis construcciones adicionales con su propio mapa.",
+    "directoryLabel": "Índice de proyectos",
     "diagramNote": "Los diagramas representan la arquitectura real sin revelar información de producción.",
     "labels": {
       "context": "El contexto",
@@ -112,6 +120,67 @@
       "role": "Arquitectura · Full stack · Modelado de dominio",
       "status": "MVP funcional · En desarrollo",
       "stack": "Django · PostgreSQL · HTMX · Alpine.js · Bootstrap · Render"
+    }
+  },
+  "atlas": {
+    "eyebrow": "Más sistemas",
+    "title": "El resto del mapa también cuenta.",
+    "intro": "Sitios en producción, herramientas y prototipos que muestran otros sectores, escalas y decisiones. Cada estado está señalado con claridad.",
+    "projects": {
+      "ebenezer": {
+        "number": "05",
+        "name": "Ebenezer Servicios Médicos",
+        "category": "Salud · Web · Operación",
+        "status": "En producción",
+        "summary": "Presencia digital para un laboratorio clínico que organiza servicios, sucursales, contacto y solicitud de citas.",
+        "contribution": "Estructuré la experiencia pública y los recorridos de información y captación para facilitar el acceso a los servicios.",
+        "stack": "Web responsive · Formularios · Gestión de contenido"
+      },
+      "sedico": {
+        "number": "06",
+        "name": "Grupo Sedico México",
+        "category": "Industria · Catálogo · Web",
+        "status": "En producción",
+        "summary": "Sitio corporativo para presentar capacidades de fabricación y un catálogo de envases plásticos PET.",
+        "contribution": "Convertí la oferta industrial en una navegación clara entre empresa, capacidades, productos y contacto comercial.",
+        "stack": "Web responsive · Catálogo · SEO"
+      },
+      "danjvic": {
+        "number": "07",
+        "name": "DanJVic Garage Doors",
+        "category": "Servicios · Web · Local",
+        "status": "En producción",
+        "summary": "Sitio orientado a captar solicitudes de reparación e instalación de puertas de garaje en el sur de Texas.",
+        "contribution": "Diseñé páginas de servicio, cobertura y llamadas a la acción para conectar búsquedas locales con contacto directo.",
+        "stack": "HTML · CSS · JavaScript · SEO local"
+      },
+      "sanmarco": {
+        "number": "08",
+        "name": "San Marco Ristorante",
+        "category": "Hospitalidad · Web · SEO",
+        "status": "En producción",
+        "summary": "Experiencia digital para descubrir la propuesta del restaurante, menú, galería, eventos, ubicación y contacto.",
+        "contribution": "Construí una navegación visual y responsive con metadatos, datos estructurados y puntos claros de reserva y visita.",
+        "stack": "HTML · CSS · JavaScript · JSON-LD"
+      },
+      "flights": {
+        "number": "09",
+        "name": "Vuelos PSP",
+        "category": "Frontend · Lógica · Prototipo",
+        "status": "Prototipo funcional",
+        "summary": "Flujo de reservación para buscar vuelos sencillos o redondos, comparar clases y elegir asientos.",
+        "contribution": "Implementé cálculo por distancia, precios, selección de cabina y asiento, y resumen del itinerario.",
+        "stack": "React · TypeScript · Material UI · date-fns"
+      },
+      "analyzer": {
+        "number": "10",
+        "name": "JavaScript Code Analyzer",
+        "category": "Tooling · Métricas · Backend",
+        "status": "Herramienta funcional",
+        "summary": "Herramienta web para inspeccionar archivos JavaScript y convertir su estructura en métricas descargables.",
+        "contribution": "Desarrollé carga de archivos, análisis de líneas, funciones, clases y métodos, pruebas y exportación JSON.",
+        "stack": "Django · Python · JavaScript · JSON"
+      }
     }
   },
   "capabilities": {

@@ -56,11 +56,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${instrumentSans.variable} ${ibmPlexMono.variable}`}
     >
-      <body>
-        <main>
-          {children}
-        </main>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

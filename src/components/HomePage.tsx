@@ -9,6 +9,7 @@ import Experience from './Experience'
 import Education from './Education'
 import ContactForm from './ContactForm'
 import Footer from './Footer'
+import ProjectAtlas from './ProjectAtlas'
 
 export default function HomePage() {
   const t = useTranslations()
@@ -119,6 +120,102 @@ export default function HomePage() {
     },
   ]
 
+  const atlasProjects = [
+    {
+      slug: 'ebenezer',
+      number: t('atlas.projects.ebenezer.number'),
+      name: t('atlas.projects.ebenezer.name'),
+      category: t('atlas.projects.ebenezer.category'),
+      status: t('atlas.projects.ebenezer.status'),
+      summary: t('atlas.projects.ebenezer.summary'),
+      contribution: t('atlas.projects.ebenezer.contribution'),
+      stack: t('atlas.projects.ebenezer.stack'),
+      diagram: 'ebenezer' as const,
+      links: [{ href: 'https://ebenezerservmed.mx/', label: t('work.labels.liveSite') }],
+    },
+    {
+      slug: 'grupo-sedico',
+      number: t('atlas.projects.sedico.number'),
+      name: t('atlas.projects.sedico.name'),
+      category: t('atlas.projects.sedico.category'),
+      status: t('atlas.projects.sedico.status'),
+      summary: t('atlas.projects.sedico.summary'),
+      contribution: t('atlas.projects.sedico.contribution'),
+      stack: t('atlas.projects.sedico.stack'),
+      diagram: 'sedico' as const,
+      links: [{ href: 'https://www.gruposedico.mx/', label: t('work.labels.liveSite') }],
+    },
+    {
+      slug: 'danjvic',
+      number: t('atlas.projects.danjvic.number'),
+      name: t('atlas.projects.danjvic.name'),
+      category: t('atlas.projects.danjvic.category'),
+      status: t('atlas.projects.danjvic.status'),
+      summary: t('atlas.projects.danjvic.summary'),
+      contribution: t('atlas.projects.danjvic.contribution'),
+      stack: t('atlas.projects.danjvic.stack'),
+      diagram: 'danjvic' as const,
+      links: [
+        { href: 'https://www.danjvic.com/', label: t('work.labels.liveSite') },
+        { href: 'https://github.com/rodrigoNavarro-Mac/DanJVicGarageDoor', label: t('work.labels.repository') },
+      ],
+    },
+    {
+      slug: 'san-marco',
+      number: t('atlas.projects.sanmarco.number'),
+      name: t('atlas.projects.sanmarco.name'),
+      category: t('atlas.projects.sanmarco.category'),
+      status: t('atlas.projects.sanmarco.status'),
+      summary: t('atlas.projects.sanmarco.summary'),
+      contribution: t('atlas.projects.sanmarco.contribution'),
+      stack: t('atlas.projects.sanmarco.stack'),
+      diagram: 'sanmarco' as const,
+      links: [
+        { href: 'https://sanmarcoristorante.com/', label: t('work.labels.liveSite') },
+        { href: 'https://github.com/rodrigoNavarro-Mac/sanmarco', label: t('work.labels.repository') },
+      ],
+    },
+    {
+      slug: 'vuelos-psp',
+      number: t('atlas.projects.flights.number'),
+      name: t('atlas.projects.flights.name'),
+      category: t('atlas.projects.flights.category'),
+      status: t('atlas.projects.flights.status'),
+      summary: t('atlas.projects.flights.summary'),
+      contribution: t('atlas.projects.flights.contribution'),
+      stack: t('atlas.projects.flights.stack'),
+      diagram: 'flights' as const,
+      links: [{ href: 'https://github.com/rodrigoNavarro-Mac/vuelosPSP', label: t('work.labels.repository') }],
+    },
+    {
+      slug: 'js-code-analyzer',
+      number: t('atlas.projects.analyzer.number'),
+      name: t('atlas.projects.analyzer.name'),
+      category: t('atlas.projects.analyzer.category'),
+      status: t('atlas.projects.analyzer.status'),
+      summary: t('atlas.projects.analyzer.summary'),
+      contribution: t('atlas.projects.analyzer.contribution'),
+      stack: t('atlas.projects.analyzer.stack'),
+      diagram: 'analyzer' as const,
+      links: [{ href: 'https://github.com/rodrigoNavarro-Mac/-javascript-code-analyzer', label: t('work.labels.repository') }],
+    },
+  ]
+
+  const projectDirectory = [
+    ...projects.map((project) => ({
+      number: project.number,
+      name: project.title,
+      category: project.category,
+      href: `#${project.slug}`,
+    })),
+    ...atlasProjects.map((project) => ({
+      number: project.number,
+      name: project.name,
+      category: project.category,
+      href: `#${project.slug}`,
+    })),
+  ]
+
   return (
     <div className="portfolio-page">
       <Navbar />
@@ -152,12 +249,25 @@ export default function HomePage() {
               </div>
             </div>
 
+            <nav className="project-directory" aria-label={t('work.directoryLabel')}>
+              {projectDirectory.map((project) => (
+                <a href={project.href} key={project.href}>
+                  <span>{project.number}</span>
+                  <strong>{project.name}</strong>
+                  <small>{project.category}</small>
+                  <span aria-hidden="true">↘</span>
+                </a>
+              ))}
+            </nav>
+
             <div className="project-list">
               {projects.map((project) => (
                 <ProjectCase key={project.slug} {...project} />
               ))}
             </div>
           </div>
+
+          <ProjectAtlas projects={atlasProjects} />
         </section>
 
         <Services />
@@ -170,7 +280,7 @@ export default function HomePage() {
               <strong>RN</strong>
               <div>
                 <span>01</span>
-                <span>04</span>
+                <span>10</span>
               </div>
             </div>
 
