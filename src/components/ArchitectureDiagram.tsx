@@ -130,51 +130,50 @@ function LaneLabel({ x, y, children }: { x: number; y: number; children: string 
 function AgentCapitalDiagram({ es, markerId }: { es: boolean; markerId: string }) {
   return (
     <g>
-      <LaneLabel x={34} y={83}>{es ? 'Fuentes operativas' : 'Operational sources'}</LaneLabel>
-      <LaneLabel x={34} y={310}>{es ? 'Conocimiento e IA' : 'Knowledge and AI'}</LaneLabel>
+      <LaneLabel x={34} y={83}>{es ? 'Datos comerciales y comisiones' : 'Commercial data and commissions'}</LaneLabel>
 
-      <Node x={34} y={100} width={150} label="Chatwoot" detail={es ? 'conversaciones' : 'conversations'} tone="blue" />
-      <Node x={34} y={168} width={150} label="Zoho CRM" detail={es ? 'leads y negocios' : 'leads and deals'} tone="blue" />
-      <Node x={34} y={236} width={150} label="Meta Ads" detail={es ? 'campañas' : 'campaigns'} tone="blue" />
+      <Node x={34} y={106} width={150} label="Zoho CRM" detail={es ? 'negocios y desarrollos' : 'deals and developers'} tone="blue" />
       <Node
         x={238}
-        y={158}
+        y={102}
         width={170}
         height={72}
-        label={es ? 'Capa de integración' : 'Integration layer'}
-        detail={es ? 'normaliza y sincroniza' : 'normalizes and syncs'}
+        label={es ? 'Integración Zoho' : 'Zoho integration'}
+        detail={es ? 'obtiene y normaliza' : 'retrieves and normalizes'}
         tone="ink"
       />
-      <Node x={466} y={164} width={146} height={64} label="PostgreSQL" detail={es ? 'estado operativo' : 'operational state'} tone="sage" />
+      <Node x={466} y={106} width={146} height={64} label="PostgreSQL" detail={es ? 'datos comerciales' : 'commercial data'} tone="sage" />
       <Node
         x={669}
-        y={158}
+        y={102}
         width={181}
         height={72}
-        label={es ? 'Dashboard interno' : 'Internal dashboard'}
-        detail={es ? 'producto web' : 'web product'}
+        label={es ? 'Plataforma interna' : 'Internal platform'}
+        detail={es ? 'visualización de Zoho' : 'Zoho visualization'}
         tone="ink"
       />
 
-      <Edge d="M184 129 H211 V181 H238" markerId={markerId} />
-      <Edge d="M184 197 H238" markerId={markerId} />
-      <Edge d="M184 265 H211 V217 H238" markerId={markerId} />
-      <Edge d="M408 194 H466" markerId={markerId} />
-      <Edge d="M612 196 H669" markerId={markerId} />
+      <Edge d="M184 135 H238" markerId={markerId} />
+      <Edge d="M408 138 H466" markerId={markerId} />
+      <Edge d="M612 138 H669" markerId={markerId} />
 
-      <Node x={34} y={326} width={150} label={es ? 'Documentos' : 'Documents'} detail="PDF · CSV · DOCX" tone="paper" />
-      <Node x={238} y={326} width={170} label={es ? 'Procesamiento' : 'Processing'} detail={es ? 'extrae y fragmenta' : 'extracts and chunks'} tone="paper" />
-      <Node x={466} y={326} width={146} label="RAG + IA" detail={es ? 'recupera y analiza' : 'retrieves and analyzes'} tone="ochre" />
-      <Edge d="M184 355 H238" markerId={markerId} />
-      <Edge d="M408 355 H466" markerId={markerId} />
-      <Edge d="M539 326 V228" markerId={markerId} />
+      <Node x={238} y={218} width={170} height={54} label={es ? 'Vista comercial' : 'Commercial view'} detail={es ? 'solo datos de Zoho' : 'Zoho data only'} tone="paper" />
+      <Node x={466} y={218} width={164} height={54} label={es ? 'Comisiones internas' : 'Internal commissions'} tone="ochre" />
+      <Node x={688} y={218} width={162} height={54} label={es ? 'Cobro a desarrolladores' : 'Developer receivables'} tone="ochre" />
+      <Edge d="M759 174 V194 H323 V218" markerId={markerId} muted />
+      <Edge d="M759 194 H548 V218" markerId={markerId} muted />
+      <Edge d="M759 194 V218" markerId={markerId} muted />
 
-      <Node x={669} y={258} width={181} height={45} label={es ? 'Ventas y desarrollos' : 'Sales and developments'} tone="paper" />
-      <Node x={669} y={313} width={181} height={45} label={es ? 'Comisiones' : 'Commissions'} tone="paper" />
-      <Node x={669} y={368} width={181} height={45} label={es ? 'Reportes e insights' : 'Reports and insights'} tone="paper" />
-      <Edge d="M759 230 V258" markerId={markerId} muted />
-      <Edge d="M759 230 V313" markerId={markerId} muted />
-      <Edge d="M759 230 V368" markerId={markerId} muted />
+      <LaneLabel x={34} y={322}>{es ? 'Consulta de conocimiento' : 'Knowledge retrieval'}</LaneLabel>
+      <Node x={34} y={340} width={142} label={es ? 'Base documental' : 'Knowledge base'} tone="paper" />
+      <Node x={210} y={340} width={142} label={es ? 'Procesamiento' : 'Processing'} tone="paper" />
+      <Node x={386} y={340} width={142} label="Pinecone" detail={es ? 'índice vectorial' : 'vector index'} tone="sage" />
+      <Node x={562} y={340} width={142} label="Agente RAG" detail={es ? 'recupera contexto' : 'retrieves context'} tone="ochre" />
+      <Node x={738} y={340} width={112} label={es ? 'Consultas' : 'Queries'} tone="blue" />
+      <Edge d="M176 369 H210" markerId={markerId} />
+      <Edge d="M352 369 H386" markerId={markerId} />
+      <Edge d="M528 369 H562" markerId={markerId} />
+      <Edge d="M704 369 H738" markerId={markerId} />
     </g>
   )
 }
@@ -284,12 +283,12 @@ const diagramCopy = {
     es: {
       title: 'Agente Capital · mapa del sistema',
       description:
-        'Chatwoot, Zoho CRM y Meta Ads se integran en PostgreSQL y un dashboard interno. Los documentos pasan por procesamiento, recuperación RAG e inteligencia artificial.',
+        'Zoho CRM alimenta la visualización comercial, las comisiones internas y las cuentas por cobrar a desarrolladores. Una base documental independiente alimenta el agente RAG.',
     },
     en: {
       title: 'Agente Capital · system map',
       description:
-        'Chatwoot, Zoho CRM, and Meta Ads integrate into PostgreSQL and an internal dashboard. Documents flow through processing, RAG retrieval, and AI.',
+        'Zoho CRM feeds commercial visualization, internal commissions, and developer receivables. A separate knowledge base powers the RAG agent.',
     },
   },
   chatwoot: {

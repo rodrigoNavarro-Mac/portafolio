@@ -69,17 +69,17 @@
   "projects": {
     "agenteCapital": {
       "number": "01",
-      "category": "AI · Web product · Data",
+      "category": "Zoho CRM · Commissions · RAG",
       "name": "Agente Capital",
-      "headline": "Commercial intelligence brought into one internal platform.",
-      "summary": "It brings together data from Chatwoot, Zoho CRM, and Meta Ads alongside knowledge, commission, and AI-assisted reporting tools.",
-      "context": "Conversations, CRM data, campaigns, documents, and internal processes needed to become searchable and actionable information.",
-      "build": "I developed the dashboard, sales and commission modules, document processing, RAG, analytics, reports, and presentation generation.",
+      "headline": "Zoho data turned into commissions, receivables, and internal answers.",
+      "summary": "An internal platform that retrieves Zoho CRM data to visualize commercial operations, calculate team commissions, and track the amounts to be collected from each developer.",
+      "context": "Commercial data from Zoho needed to support two separate workflows—internal commissions and developer receivables—plus a faster way to query internal knowledge.",
+      "build": "I developed the Zoho data integration and visualization, the commission and developer receivables modules, and a RAG agent for querying the knowledge base.",
       "evidence": "50+ SQL migrations, 141 included test cases, and continuous evolution documented in the repository.",
-      "role": "Architecture · Backend · Product · Integrations",
+      "role": "Architecture · Internal product · Data · Zoho integration",
       "status": "Internal product · Evolving",
-      "evolution": "The direct WhatsApp integration was an early prototype. The current conversational operation runs through Chatwoot.",
-      "stack": "Next.js · TypeScript · PostgreSQL · Pinecone · Zoho and Meta APIs"
+      "evolution": "The direct WhatsApp integration was only a prototype. Conversational operations moved to the Chatwoot fork and are not part of Agente Capital's current flow.",
+      "stack": "Next.js · TypeScript · PostgreSQL · Pinecone · Zoho CRM API"
     },
     "chatwoot": {
       "number": "02",

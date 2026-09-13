@@ -69,17 +69,17 @@
   "projects": {
     "agenteCapital": {
       "number": "01",
-      "category": "IA · Producto web · Datos",
+      "category": "Zoho CRM · Comisiones · RAG",
       "name": "Agente Capital",
-      "headline": "Inteligencia comercial reunida en una plataforma interna.",
-      "summary": "Centraliza información de Chatwoot, Zoho CRM y Meta Ads junto con herramientas de conocimiento, comisiones y reportes asistidos por IA.",
-      "context": "Conversaciones, CRM, campañas, documentos y procesos internos necesitaban convertirse en información consultable y accionable.",
-      "build": "Desarrollé el dashboard, módulos de ventas y comisiones, procesamiento documental, RAG, analítica y generación de reportes y presentaciones.",
+      "headline": "Datos de Zoho convertidos en comisiones, cobros y consultas internas.",
+      "summary": "Plataforma interna que obtiene información de Zoho CRM para visualizar la operación comercial, calcular comisiones del equipo y controlar lo que debe cobrarse a cada desarrollador.",
+      "context": "La información comercial de Zoho debía alimentar dos procesos distintos —comisiones internas y cuentas por cobrar a desarrolladores— además de una forma rápida de consultar conocimiento interno.",
+      "build": "Desarrollé la integración y visualización de datos de Zoho, los módulos de comisiones y cobros a desarrolladores, y un agente RAG para realizar consultas sobre la base de conocimiento.",
       "evidence": "50+ migraciones SQL, 141 casos de prueba incluidos y una evolución continua documentada en el repositorio.",
-      "role": "Arquitectura · Backend · Producto · Integraciones",
+      "role": "Arquitectura · Producto interno · Datos · Integración con Zoho",
       "status": "Producto interno · En evolución",
-      "evolution": "La integración directa con WhatsApp fue un prototipo inicial. La operación conversacional actual funciona mediante Chatwoot.",
-      "stack": "Next.js · TypeScript · PostgreSQL · Pinecone · Zoho y Meta APIs"
+      "evolution": "La integración directa con WhatsApp fue solo un prototipo. La operación conversacional se trasladó al fork de Chatwoot y no forma parte del flujo actual de Agente Capital.",
+      "stack": "Next.js · TypeScript · PostgreSQL · Pinecone · Zoho CRM API"
     },
     "chatwoot": {
       "number": "02",
